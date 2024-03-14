@@ -62,6 +62,7 @@ jobs:
           registry: ${{ secrets.REGISTRY }}
           repo: ${{ env.ECR_REPO }}
           region: ${{ env.AWS_REGION }}
+          tag: latest,${{ github.run_number }}
           daemon_off: false
           dockerfile: ./Dockerfile
           context: ./
