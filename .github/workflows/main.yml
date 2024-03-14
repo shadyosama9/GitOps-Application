@@ -62,6 +62,7 @@ jobs:
           registry: ${{ secrets.REGISTRY }}
           repo: ${{ env.ECR_REPO }}
           region: ${{ env.AWS_REGION }}
+          auto_tag: true
           daemon_off: false
           dockerfile: ./Dockerfile
           context: ./
