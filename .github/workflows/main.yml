@@ -68,7 +68,7 @@ jobs:
           context: ./
 
   DeployToEKS:
-    needs: BUILD_AND_PUBLISH
+    needs: Build_And_Publish
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout
@@ -86,7 +86,8 @@ jobs:
 
       - name: Delete existing secret
         run: kubectl delete secret regcred || true
-
+      - name: Delete existing secret
+        run: kubectl delete secret regcred || true
       - name: Login to ECR
         run: kubectl create secret docker-registry regcred --docker-server=${{ secrets.REGISTRY }} --docker-username=AWS  --docker-password=$(aws ecr get-login-password)
 
