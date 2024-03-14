@@ -3,7 +3,7 @@ on: workflow_dispatch
 env:
   AWS_REGION: us-east-1
   CLUSTER_NAME: GitOps-EKS
-  ECR_REPO: gitops
+  ECR_REPO: vpro-img
 
 jobs:
   Testing:
@@ -62,7 +62,6 @@ jobs:
           registry: ${{ secrets.REGISTRY }}
           repo: ${{ env.ECR_REPO }}
           region: ${{ env.AWS_REGION }}
-          auto_tag: true
           daemon_off: false
           dockerfile: ./Dockerfile
           context: ./
