@@ -84,6 +84,9 @@ jobs:
       - name: Get Kube config file
         run: aws eks update-kubeconfig --region ${{ env.AWS_REGION }} --name ${{ env.CLUSTER_NAME }}
 
+      - name: Delete existing secret
+        run: kubectl delete secret regcred || true
+
       - name: Login to ECR
         run: kubectl create secret docker-registry regcred --docker-server=${{ secrets.REGISTRY }} --docker-username=AWS  --docker-password=$(aws ecr get-login-password)
 
