@@ -68,7 +68,7 @@ jobs:
           context: ./
 
   DeployToEKS:
-    needs: BUILD_AND_PUBLISH
+    needs: Build_And_Publish
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout
@@ -100,5 +100,5 @@ jobs:
           #config-files: .github/values/dev.yaml
           chart-path: helm/vprofilecharts
           namespace: default
-          values: appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPO }},apptag=${{ github.run_number }}
+          values: appimg=${{ secrets.REGISTRY }}/${{ env.ECR_REPO }},apptag=${{ github.run_number }}
           name: vprofile-stack
