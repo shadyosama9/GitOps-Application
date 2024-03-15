@@ -2,7 +2,7 @@
 
 The Vprofile GitOps project automates the deployment pipeline for a Java application using GitHub Actions, Docker, Maven, and Helm on Amazon EKS. It ensures code quality, builds Docker images, and deploys the application to Kubernetes. The project provides a streamlined CI/CD process for deploying Java applications to Kubernetes, enhancing development efficiency and reliability.
 
-## Prerequisites
+## Prerequisites:
 
 - Access to an Amazon EKS Cluster: You should have access to an Amazon EKS cluster where you want to deploy the application. Ensure you have the necessary permissions to create resources in the cluster.
 
