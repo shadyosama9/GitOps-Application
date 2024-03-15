@@ -6,7 +6,7 @@ spec:
   selector:
     app: vpro-rmq
   ports:
-  - port: 15672
+  - port: 5672
     targetPort: vprormq-port
     protocol: TCP
 
